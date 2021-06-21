@@ -1,11 +1,11 @@
-import './App.css';
+import React from 'react'
+import styles from './App.module.scss';
+import Search from './components/Search/Search'
 
 function App() {
   return (
-    <div className="App">
-      <h1>
-        Search-book
-      </h1>
+    <div className={styles.app}>
+      <Search />
     </div>
   );
 }
