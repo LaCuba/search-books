@@ -1,0 +1,47 @@
+a {
+  text-decoration: none;
+}
+
+.container {
+  margin: 0 auto;
+  margin-top: 30px;
+  max-width: 70%;
+
+  display: grid;
+  grid-template-areas: 
+  "cover title"
+  "cover author";
+  grid-template-columns: 1fr 8fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+}
+
+.cover {
+  grid-area: cover;
+
+  max-width: 100px;
+  max-height: 100px;
+  height: auto;
+}
+
+.title {
+  grid-area: title;
+  align-self: center;
+
+  color: #000000;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.author {
+  grid-area: author;
+  align-self: start;
+
+  color: #000000;
+  font-size: 15px;
+  font-weight: 500;
+  
+  b, p {
+    display: inline;
+  }
+}
