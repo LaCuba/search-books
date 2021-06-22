@@ -1,12 +1,12 @@
 import React from 'react'
 import styles from './App.module.scss';
-import Search from './components/Search/Search'
+import SearchContainer from './components/Search/SearchContainer'
 import SnippetsContainer from './components/Snippets/SnippetsContainer';
 
 function App() {
   return (
     <div className={styles.app}>
-      <Search />
+      <SearchContainer />
       <SnippetsContainer />
     </div>
   );
