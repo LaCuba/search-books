@@ -6,7 +6,6 @@ const instance = axios.create({
 
 export const searchApi = {
   getBooks(value) {
-    debugger
     return(
       instance.get(`search.json?q=${value}`)
       .then(response => response.data)

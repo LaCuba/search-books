@@ -4,10 +4,10 @@ import Snippets from './Snippets'
 
 const SnippetsContainer = (props) => {
 
-  return Object.keys(props.snippets).map(key => <Snippets key={key}
-                                                          cover={props.snippets[key].cover}
+  return props.snippets && Object.keys(props.snippets).map(key => <Snippets key={key}
+                                                          cover={props.snippets[key].cover_i ? props.snippets[key].cover_i : null}
                                                           title={props.snippets[key].title}
-                                                          author={props.snippets[key].author}
+                                                          author={props.snippets[key].author_name ? props.snippets[key].author_name : null}
                                                           />)
 }
 
