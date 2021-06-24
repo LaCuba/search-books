@@ -9,9 +9,9 @@ function App() {
 
   return (
     <div className={styles.app}>
+      <ModalContainer />
       <SearchContainer />
       <SnippetsContainer />
-      <ModalContainer />
     </div>
   );
 }
