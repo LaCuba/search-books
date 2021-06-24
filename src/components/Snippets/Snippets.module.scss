@@ -6,14 +6,14 @@ a {
 .container {
   margin: 0 auto;
   margin-top: 30px;
-  max-width: 70%;
+  max-width: 60%;
 
   display: grid;
   grid-template-areas: 
   "cover title"
   "cover author";
-  grid-template-columns: 1fr 8fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 80px 8fr;
+  grid-template-rows: 1fr auto;
   gap: 10px;
 }
 
