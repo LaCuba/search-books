@@ -6,7 +6,7 @@ const Snippets = (props) => {
   const cover = 'http://covers.openlibrary.org/b/id/' + props.cover + '-S.jpg'
 
   return <>
-    <a className={styles.container} href="#">
+    <a className={styles.container} onClick={() => props.setBook(props.bookKey)}>
       <img className={styles.cover} src={props.cover ? cover : undefined} alt="cover" />
       <h3 className={styles.title}>{props.title}</h3>
       {props.author && <div className={styles.author}>

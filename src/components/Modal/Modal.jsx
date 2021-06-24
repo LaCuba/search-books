@@ -3,11 +3,15 @@ import styles from './Modal.module.scss'
 
 const Modal = (props) => {
 
+  // if (!props.book) {
+  //   return <div>loading....</div>
+  // }
+
   return (
-    <div className={props.active ? styles.modalActive : styles.modal} onClick={() => props.setActive(false)}>
+    <div className={props.book ? styles.modalActive : styles.modal} onClick={() => props.setBook(null)}>
       <div className={styles.content}>
         <div className={styles.cover}>
-          
+          {props.bookKey}
         </div>
         <div className={styles.title}></div>
         <div className={styles.author}></div>
