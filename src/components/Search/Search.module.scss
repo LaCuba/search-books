@@ -1,10 +1,15 @@
 .panel {
-  margin: 30px auto;
+  margin: 25px auto;
   max-width: 60%;
   display: grid;
+  grid-template-areas: 
+  "input button"
+  "resultCount resultCount";
   grid-template-columns: 10fr 1fr;
+  grid-template-rows: 1fr 25px;
 
   input {
+    grid-area: input;
     outline: none;
     border: solid 2px #fc0;
     border-right: none;
@@ -16,6 +21,7 @@
   }
   
   button {
+    grid-area: button;
     outline: none;
     background: none;
     cursor: pointer;
@@ -31,5 +37,13 @@
 
   button:hover {
     background-color: #fc0;
+  }
+
+  .resultCount {
+    grid-area: resultCount;
+    align-self: center;
+    padding-left: 5px;
+    font-size: 14px;
+    font-weight: 300;
   }
 }

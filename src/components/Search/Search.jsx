@@ -26,6 +26,9 @@ const Search = (props) => {
   <div className={styles.panel}>
     <input type="text" placeholder="Search a book." onChange={onSearchChange} value={character} />
     <button onClick={searchBooks}>Search</button>
+    {props.count && <div className={styles.resultCount}>
+      <p>Results: {props.count}</p>
+    </div>}
   </div>
   </>
 }

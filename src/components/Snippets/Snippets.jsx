@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './Snippets.module.scss'
+import bookImg from './../../icons/book.svg'
 
 const Snippets = (props) => {
 
@@ -7,10 +8,10 @@ const Snippets = (props) => {
 
   return <>
     <a className={styles.container} onClick={() => props.setBook(props.bookKey)}>
-      <img className={styles.cover} src={props.cover ? cover : undefined} alt="cover" />
+      <img className={styles.cover} src={props.cover ? cover : bookImg} alt="cover" />
       <h3 className={styles.title}>{props.title}</h3>
       {props.author && <div className={styles.author}>
-        <b>Автор: </b><p> { props.author.length > 1 ? props.author.join(', ') : props.author[0] } </p>
+        <b>Author: </b><p> { props.author.length > 1 ? props.author.join(', ') : props.author[0] } </p>
       </div>}
     </a>
   </>

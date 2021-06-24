@@ -1,5 +1,7 @@
 import React from 'react'
 import styles from './Modal.module.scss'
+import bookImg from './../../icons/book.svg'
+import closeImg from './../../icons/close.svg'
 
 const Modal = (props) => {
 
@@ -10,13 +12,15 @@ const Modal = (props) => {
         <div className={styles.header}>
           <h3 className={styles.headerTitle}>{props.book[0].title}</h3>
           <div className={styles.cancel}>
-            X
+            <a onClick={() => props.setBook(null)}>
+              <img src={closeImg} alt="close" />
+            </a>
           </div>
         </div>
         <div className={styles.cover}>
           <img src={props.book[0].cover_i 
             ? 'http://covers.openlibrary.org/b/id/' + props.book[0].cover_i + '-L.jpg'
-            : undefined} alt="cover" />
+            : bookImg} alt="cover" />
         </div>
         <div className={styles.info}>
           {props.book[0].title && <div className={styles.title}>
