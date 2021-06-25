@@ -5,9 +5,9 @@ const instance = axios.create({
 })
 
 export const searchApi = {
-  getBooks(value) {
+  getBooks(value, currentPage) {
     return(
-      instance.get(`search.json?q=${value}`)
+      instance.get(`search.json?q=${value}&page=${currentPage}`)
       .then(response => response.data)
     )
   }
