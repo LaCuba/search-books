@@ -5,6 +5,7 @@ import { setBook, getBooks } from './../../redux/search-reducer'
 import Paginator from './Paginator'
 import { useState } from 'react'
 import styles from './SnippetsContainer.module.scss'
+import Preloader from '../common/Preloader'
 
 const SnippetsContainer = (props) => {
 
@@ -15,7 +16,9 @@ const SnippetsContainer = (props) => {
     setCurrentPage(p)
   }
 
-  return props.snippets &&
+  return <>
+  <Preloader isFetching={props.isFetching} />
+  {props.snippets &&
     <div>
       {Object.keys(props.snippets)
         .map(key => <Snippets key={key}
@@ -33,14 +36,16 @@ const SnippetsContainer = (props) => {
           portionSize={5}
         />
       </div>
-    </div>
+    </div>}
+  </>
 }
 
 const mapStateToProps = (state) => {
   return {
     snippets: state.snippets.snippets,
     countSnippets: state.snippets.count,
-    value: state.snippets.valueSearch
+    value: state.snippets.valueSearch,
+    isFetching: state.snippets.isFetching
   }
 }
 
