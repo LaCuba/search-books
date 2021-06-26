@@ -11,7 +11,7 @@ const Search = (props) => {
     setCharacter(e.currentTarget.value)
     if (e.currentTarget.value) {
       clearTimeout(timer)
-      setTimer(setTimeout((value) => console.log(value.replaceAll(/\s+/g, '+')), 1000, e.currentTarget.value))
+      setTimer(setTimeout((value) => props.getBooks(value.replaceAll(/\s+/g, '+')), 1000, e.currentTarget.value))
     }
   }
   
