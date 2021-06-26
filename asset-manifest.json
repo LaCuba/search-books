@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/search-books/static/css/main.c0a4b93c.chunk.css",
+    "main.js": "/search-books/static/js/main.87105069.chunk.js",
+    "main.js.map": "/search-books/static/js/main.87105069.chunk.js.map",
+    "runtime-main.js": "/search-books/static/js/runtime-main.0d04b295.js",
+    "runtime-main.js.map": "/search-books/static/js/runtime-main.0d04b295.js.map",
+    "static/js/2.a0ce5008.chunk.js": "/search-books/static/js/2.a0ce5008.chunk.js",
+    "static/js/2.a0ce5008.chunk.js.map": "/search-books/static/js/2.a0ce5008.chunk.js.map",
+    "static/js/3.e4bf2199.chunk.js": "/search-books/static/js/3.e4bf2199.chunk.js",
+    "static/js/3.e4bf2199.chunk.js.map": "/search-books/static/js/3.e4bf2199.chunk.js.map",
+    "index.html": "/search-books/index.html",
+    "static/css/main.c0a4b93c.chunk.css.map": "/search-books/static/css/main.c0a4b93c.chunk.css.map",
+    "static/js/2.a0ce5008.chunk.js.LICENSE.txt": "/search-books/static/js/2.a0ce5008.chunk.js.LICENSE.txt",
+    "static/media/book.a929ff68.svg": "/search-books/static/media/book.a929ff68.svg",
+    "static/media/close.c39ccb73.svg": "/search-books/static/media/close.c39ccb73.svg",
+    "static/media/preloader.f76f1fbe.gif": "/search-books/static/media/preloader.f76f1fbe.gif"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0d04b295.js",
+    "static/js/2.a0ce5008.chunk.js",
+    "static/css/main.c0a4b93c.chunk.css",
+    "static/js/main.87105069.chunk.js"
+  ]
+}
