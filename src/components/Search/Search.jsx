@@ -1,35 +1,41 @@
 import React from 'react'
 import { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { getBooks } from '../../redux/search-reducer'
 import styles from './Search.module.scss'
 
-const Search = (props) => {
+const Search = () => {
+
+  const count = useSelector(state => state.snippets.count)
+  const dispatch = useDispatch()
 
   const [character, setCharacter] = useState('')
   const [timer, setTimer] = useState(0)
-  
+
   const onSearchChange = (e) => {
     setCharacter(e.currentTarget.value)
     if (e.currentTarget.value) {
       clearTimeout(timer)
-      setTimer(setTimeout((value) => props.getBooks(value.replaceAll(/\s+/g, '+')), 1000, e.currentTarget.value))
-    }
-  }
-  
-  const searchBooks = () => {
-    if (character) {
-      const value = character.replaceAll(/\s+/g, '+')
-      props.getBooks(value)
+      setTimer(setTimeout((value) =>
+        dispatch(getBooks(value.replaceAll(/\s+/g, '+'))), 1000, e.currentTarget.value))
     }
   }
 
-  return <> 
-  <div className={styles.panel}>
-    <input type="text" placeholder="Search a book." onChange={onSearchChange} value={character} />
-    <button onClick={searchBooks}>Search</button>
-    {props.count && <div className={styles.resultCount}>
-      <p>Results: {props.count}</p>
-    </div>}
-  </div>
+  const searchBooks = () => {
+    if (character) {
+      const value = character.replaceAll(/\s+/g, '+')
+      dispatch(getBooks(value))
+    }
+  }
+
+  return <>
+    <div className={styles.panel}>
+      <input type="text" placeholder="Search a book." onChange={onSearchChange} value={character} />
+      <button onClick={searchBooks}>Search</button>
+      {count && <div className={styles.resultCount}>
+        <p>Results: {count}</p>
+      </div>}
+    </div>
   </>
 }
 

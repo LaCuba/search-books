@@ -17,26 +17,24 @@ const SnippetsContainer = (props) => {
   }
 
   return <>
-  <Preloader isFetching={props.isFetching} />
-  {props.snippets &&
-    <div>
-      {Object.keys(props.snippets)
-        .map(key => <Snippets key={key}
-          cover={props.snippets[key].cover_i ? props.snippets[key].cover_i : null}
-          title={props.snippets[key].title}
-          author={props.snippets[key].author_name ? props.snippets[key].author_name : null}
-          bookKey={props.snippets[key].key}
-          setBook={props.setBook}
-        />)}
-      <div className={styles.paginator}>
-        <Paginator countSnippets={props.countSnippets}
-          countSnippetsOnPage={100}
-          currentPage={currentPage}
-          pageClick={pageClick}
-          portionSize={5}
-        />
-      </div>
-    </div>}
+    <Preloader isFetching={props.isFetching} />
+    {props.snippets &&
+      <div>
+        {Object.keys(props.snippets)
+          .map(key => <Snippets key={key}
+            cover={props.snippets[key].cover_i ? props.snippets[key].cover_i : null}
+            title={props.snippets[key].title}
+            author={props.snippets[key].author_name ? props.snippets[key].author_name : null}
+            bookKey={props.snippets[key].key}
+            setBook={props.setBook}
+          />)}
+        <div className={styles.paginator}>
+          <Paginator countSnippets={props.countSnippets}
+            currentPage={currentPage}
+            pageClick={pageClick}
+          />
+        </div>
+      </div>}
   </>
 }
 

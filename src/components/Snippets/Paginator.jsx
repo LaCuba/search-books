@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import styles from './Paginator.module.scss'
 
-const Paginator = ({ countSnippets, countSnippetsOnPage, currentPage, pageClick, portionSize }) => {
+const Paginator = ({ countSnippets, currentPage, pageClick }) => {
 
-  const pagesCount = Math.ceil(countSnippets / countSnippetsOnPage)
+  const portionSize = 5
+
+  const pagesCount = Math.ceil(countSnippets / 100)
 
   const pages = []
 
