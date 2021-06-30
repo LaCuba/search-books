@@ -2,23 +2,26 @@ import React from 'react'
 import styles from './Modal.module.scss'
 import bookImg from './../../icons/book.svg'
 import closeImg from './../../icons/close.svg'
-import { setBook } from "../../redux/actions/modal"
+import { setBookKey } from "../../redux/actions/modal"
 import { useDispatch, useSelector } from 'react-redux'
 
 const Modal = () => {
 
   const dispatch = useDispatch()
 
-  const book = useSelector(state => state.snippets.book)
+  const bookKey = useSelector(state => state.snippets.bookKey)
+  const snippets = useSelector(state => state.snippets.storage.snippets)
+
+  const book = bookKey && snippets && snippets.filter(snippet => snippet.key === bookKey)
 
   return (
     book &&
-    <div className={book ? styles.modalActive : styles.modal} onClick={() => dispatch(setBook(null))}>
+    <div className={book ? styles.modalActive : styles.modal} onClick={() => dispatch(setBookKey(null))}>
       <div className={styles.content} onClick={e => e.stopPropagation()}>
         <div className={styles.header}>
           <h3 className={styles.headerTitle}>{book[0].title}</h3>
           <div className={styles.cancel}>
-            <a onClick={() => dispatch(setBook(null))}>
+            <a onClick={() => dispatch(setBookKey(null))}>
               <img src={closeImg} alt="close" />
             </a>
           </div>

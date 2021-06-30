@@ -7,7 +7,7 @@ import * as preloaderActions from "../actions/preloader"
 import { SnippetType } from "../thunk/thunk"
 
 type StorageType = {
-  valueSearch: string 
+  valueSearch: string
   snippets: null | Array<SnippetType>
   count: null | number
 }
@@ -18,7 +18,7 @@ const initialState = {
     snippets: null,
     count: null,
   } as StorageType,
-  bookKey: null as null | Array<SnippetType>,
+  bookKey: null as null | string,
   isFetching: false
 }
 
@@ -44,22 +44,23 @@ const SearchReducer: Reducer<InitialStateType, Action> = (state = initialState, 
         }
       }
     case getType(preloaderActions.toggleIsFetching):
-    return {
-      ...state,
-      isFetching: action.payload.isFetching
-    }
-    case getType(modalActions.setBook):
-      if (action.payload.bookKey && state.storage.snippets != null) {
-        return {
-          ...state,
-          book: state.storage.snippets.filter(snippet => snippet.key === action.payload.bookKey)
-      }} else {
-        return {
-          ...state,
-          book: null
-        } 
+      return {
+        ...state,
+        isFetching: action.payload.isFetching
       }
-    default: 
+    case getType(modalActions.setBookKey):
+      if (action.payload.bookKey) {
+        return {
+          ...state,
+          bookKey: action.payload.bookKey
+        }
+      } else {
+        return {
+          ...state,
+          bookKey: null
+        }
+      }
+    default:
       return state
   }
 }

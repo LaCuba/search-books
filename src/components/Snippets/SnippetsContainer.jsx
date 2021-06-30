@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Snippets from './Snippets'
 import { getBooks } from '../../redux/thunk/thunk'
-import { setBook } from './../../redux/actions/modal'
+import { setBookKey } from './../../redux/actions/modal'
 import Paginator from './Paginator'
 import { useState } from 'react'
 import styles from './SnippetsContainer.module.scss'
@@ -32,7 +32,7 @@ const SnippetsContainer = () => {
             title={storage.snippets[key].title}
             author={storage.snippets[key].author_name ? storage.snippets[key].author_name : null}
             bookKey={storage.snippets[key].key}
-            setBook={setBook}
+            setBookKey={setBookKey}
           />)}
         <div className={styles.paginator}>
           <Paginator countSnippets={storage.count}
