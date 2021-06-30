@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getBooks } from '../../redux/search-reducer'
+import { getBooks } from '../../redux/thunk/thunk'
 import styles from './Search.module.scss'
 
 const Search = () => {

@@ -1,11 +1,9 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 import thunkCreator from 'redux-thunk'
-import SearchReducer from './search-reducer'
+import reducers from './reducers/reducers'
 
-const reducers = combineReducers({
-  snippets: SearchReducer
-})
+const combinedReducer = combineReducers(reducers)
 
-const store = createStore(reducers, applyMiddleware(thunkCreator))
+const store = createStore(combinedReducer, applyMiddleware(thunkCreator))
 
 export default store

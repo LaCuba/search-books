@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Snippets from './Snippets'
-import { getBooks } from './../../redux/search-reducer'
+import { getBooks } from '../../redux/thunk/thunk'
 import { setBook } from './../../redux/actions/modal'
 import Paginator from './Paginator'
 import { useState } from 'react'

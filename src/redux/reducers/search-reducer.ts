@@ -1,15 +1,11 @@
 import { Reducer } from "react"
 import { getType } from "typesafe-actions"
-import { searchApi } from "../api/api"
-import { Action } from "./actions/actions"
-import * as searchActions from "./actions/search"
-import * as modalActions from "./actions/modal"
-import * as preloaderActions from "./actions/preloader"
+import { Action } from "../actions/actions"
+import * as searchActions from "../actions/search"
+import * as modalActions from "../actions/modal"
+import * as preloaderActions from "../actions/preloader"
 
-import { toggleIsFetching } from "./actions/preloader"
-import { setBooks, setValueSearch } from "./actions/search"
-
-type storageType = {
+type StorageType = {
   valueSearch: string 
   snippets: null | any
   count: null | number
@@ -20,7 +16,7 @@ const initialState = {
     valueSearch: '',
     snippets: null,
     count: null,
-  } as storageType,
+  } as StorageType,
   book: null as string | null,
   isFetching: false
 }
@@ -65,16 +61,6 @@ const SearchReducer: Reducer<initialStateType, Action> = (state = initialState, 
     default: 
       return state
   }
-}
-
-export const getBooks = (value: string, currentPage = 1) => (dispatch: any) => {
-  dispatch(toggleIsFetching(true))
-  searchApi.getBooks(value, currentPage)
-  .then(response => {
-    dispatch(toggleIsFetching(false))
-    dispatch(setValueSearch(value))
-    dispatch(setBooks(response.docs, response.numFound))
-  })
 }
 
 export default SearchReducer
