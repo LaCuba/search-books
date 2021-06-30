@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './Modal.module.scss'
 import bookImg from './../../icons/book.svg'
 import closeImg from './../../icons/close.svg'
-import { setBook } from "../../redux/search-reducer"
+import { setBook } from "../../redux/actions/modal"
 import { useDispatch, useSelector } from 'react-redux'
 
 const Modal = () => {
