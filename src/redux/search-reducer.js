@@ -6,9 +6,11 @@ const TOGGLE_IS_FETCHING = "TOGGLE_IS_FETCHING"
 const SET_BOOK = "SET-BOOK"
 
 const initialState = {
-  valueSearch: '',
-  snippets: null,
-  count: null,
+  storage: {
+    valueSearch: '',
+    snippets: null,
+    count: null,
+  },
   book: null,
   isFetching: false
 }
@@ -18,13 +20,19 @@ const SearchReducer = (state = initialState, action) => {
     case SET_SNIPPETS:
       return {
         ...state,
-        snippets: action.snippets,
-        count: action.count
+        storage: {
+          ...state.storage,
+          snippets: action.snippets,
+          count: action.count
+        }
       }
     case SET_VALUE_SEARCH:
       return {
         ...state,
-        valueSearch: action.value
+        storage: {
+          ...state.storage,
+          valueSearch: action.value
+        }
       }
     case TOGGLE_IS_FETCHING:
     return {
