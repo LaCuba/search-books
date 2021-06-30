@@ -1,14 +1,14 @@
 import React from 'react'
 import styles from './App.module.scss';
 import Search from './components/Search/Search'
-import ModalContainer from './components/Modal/ModalContainer'
+import Modal from './components/Modal/Modal'
 import SnippetsContainer from './components/Snippets/SnippetsContainer';
 
 function App() {
 
   return (
     <div className={styles.app}>
-      <ModalContainer />
+      <Modal />
       <Search />
       <SnippetsContainer />
     </div>

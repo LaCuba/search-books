@@ -43,7 +43,7 @@ const SearchReducer = (state = initialState, action) => {
       if (action.bookKey) {
         return {
           ...state,
-          book: state.snippets.filter(el => el.key === action.bookKey)
+          book: state.storage.snippets.filter(el => el.key === action.bookKey)
       }} else {
         return {
           ...state,

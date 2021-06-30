@@ -27,7 +27,7 @@ const SnippetsContainer = () => {
       <div>
         {Object.keys(storage.snippets)
           .map(key => <Snippets key={key}
-            cover={storage.snippets[key].cover_i ? storage.snippets[key].cover_i : null}
+            coverId={storage.snippets[key].cover_i ? storage.snippets[key].cover_i : null}
             title={storage.snippets[key].title}
             author={storage.snippets[key].author_name ? storage.snippets[key].author_name : null}
             bookKey={storage.snippets[key].key}

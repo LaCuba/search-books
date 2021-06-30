@@ -2,52 +2,58 @@ import React from 'react'
 import styles from './Modal.module.scss'
 import bookImg from './../../icons/book.svg'
 import closeImg from './../../icons/close.svg'
+import { setBook } from "../../redux/search-reducer"
+import { useDispatch, useSelector } from 'react-redux'
 
-const Modal = (props) => {
+const Modal = () => {
+
+  const dispatch = useDispatch()
+
+  const book = useSelector(state => state.snippets.book)
 
   return (
-    props.book &&
-    <div className={props.book ? styles.modalActive : styles.modal} onClick={() => props.setBook(null)}>
+    book &&
+    <div className={book ? styles.modalActive : styles.modal} onClick={() => dispatch(setBook(null))}>
       <div className={styles.content} onClick={e => e.stopPropagation()}>
         <div className={styles.header}>
-          <h3 className={styles.headerTitle}>{props.book[0].title}</h3>
+          <h3 className={styles.headerTitle}>{book[0].title}</h3>
           <div className={styles.cancel}>
-            <a onClick={() => props.setBook(null)}>
+            <a onClick={() => dispatch(setBook(null))}>
               <img src={closeImg} alt="close" />
             </a>
           </div>
         </div>
         <div className={styles.cover}>
-          <img src={props.book[0].cover_i 
-            ? 'http://covers.openlibrary.org/b/id/' + props.book[0].cover_i + '-L.jpg'
+          <img src={book[0].cover_i 
+            ? 'http://covers.openlibrary.org/b/id/' + book[0].cover_i + '-L.jpg'
             : bookImg} alt="cover" />
         </div>
         <div className={styles.info}>
-          {props.book[0].title && <div className={styles.title}>
-            <b>Title: </b> <p>{props.book[0].title}</p>
+          {book[0].title && <div className={styles.title}>
+            <b>Title: </b> <p>{book[0].title}</p>
           </div>}
-          {props.book[0].author_name && <div className={styles.author}>
+          {book[0].author_name && <div className={styles.author}>
             <b>Author: </b>
-            {props.book[0].author_name.length > 1 
-              ? props.book[0].author_name.join(', ') 
-              : props.book[0].author_name }
+            {book[0].author_name.length > 1 
+              ? book[0].author_name.join(', ') 
+              : book[0].author_name }
           </div>}
-          {props.book[0].publish_date && <div className={styles.datePublish}>
+          {book[0].publish_date && <div className={styles.datePublish}>
             <b>Publish date: </b>
             <p>
-              {props.book[0].publish_date[0]}
+              {book[0].publish_date[0]}
             </p>
           </div>}
-          {props.book[0].publisher && <div className={styles.publisher}>
+          {book[0].publisher && <div className={styles.publisher}>
             <b>Publisher: </b>
             <p>
-              {props.book[0].publisher[0]}
+              {book[0].publisher[0]}
             </p>
           </div>}
-          {props.book[0].isbn && <div className={styles.isbn}>
+          {book[0].isbn && <div className={styles.isbn}>
             <b>ISBN: </b>
             <p>
-              {props.book[0].isbn[0]}
+              {book[0].isbn[0]}
             </p>
           </div>}
         </div>
