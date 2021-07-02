@@ -1,5 +1,11 @@
-import { createCustomAction } from 'typesafe-actions';
+type SetBookKeyType = {
+  type: string
+  payload: {
+    bookKey: string | null
+  }
+}
 
-export const setBookKey = createCustomAction('modal/SET-BOOK', (bookKey: string | null) => ({
+export const setBookKey = (bookKey: string | null): SetBookKeyType => ({
+  type: 'modal/SET-BOOK',
   payload: { bookKey }
-}))
+})

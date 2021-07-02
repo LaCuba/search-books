@@ -1,10 +1,9 @@
 import { Reducer } from "react"
-import { getType } from "typesafe-actions"
-import { Action } from "../actions/actions"
 import * as searchActions from "../actions/search"
 import * as modalActions from "../actions/modal"
 import * as preloaderActions from "../actions/preloader"
 import { SnippetType } from "../thunk/thunk"
+import { AnyAction } from "redux"
 
 type StorageType = {
   valueSearch: string
@@ -24,18 +23,18 @@ const initialState = {
 
 type InitialStateType = typeof initialState
 
-const SearchReducer: Reducer<InitialStateType, Action> = (state = initialState, action: Action) => {
+const SearchReducer = (state = initialState, action: AnyAction): InitialStateType => {
   switch (action.type) {
-    case getType(searchActions.setBooks):
+    case 'search/SET-SNIPPETS':
       return {
         ...state,
         storage: {
           ...state.storage,
           snippets: action.payload.snippets,
           count: action.payload.count
-        },
+        }
       }
-    case getType(searchActions.setValueSearch):
+    case 'search/SET-VALUE-SEARCH':
       return {
         ...state,
         storage: {
@@ -43,22 +42,21 @@ const SearchReducer: Reducer<InitialStateType, Action> = (state = initialState, 
           valueSearch: action.payload.value
         }
       }
-    case getType(preloaderActions.toggleIsFetching):
+    case 'preloader/TOGGLE-IS-FETCHING':
       return {
         ...state,
         isFetching: action.payload.isFetching
       }
-    case getType(modalActions.setBookKey):
+    case 'modal/SET-BOOK':
       if (action.payload.bookKey) {
         return {
           ...state,
           bookKey: action.payload.bookKey
         }
-      } else {
-        return {
-          ...state,
-          bookKey: null
-        }
+      }
+      return {
+        ...state,
+        bookKey: null
       }
     default:
       return state

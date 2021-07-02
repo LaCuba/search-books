@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './Modal.module.scss'
 import bookImg from './../../icons/book.svg'
 import closeImg from './../../icons/close.svg'
+import * as selector from './../../redux/selectors/selectors'
 import { setBookKey } from "../../redux/actions/modal"
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -9,8 +10,8 @@ const Modal = () => {
 
   const dispatch = useDispatch()
 
-  const bookKey = useSelector(state => state.snippets.bookKey)
-  const snippets = useSelector(state => state.snippets.storage.snippets)
+  const bookKey = useSelector(selector.modal.bookKeySelector)
+  const snippets = useSelector(selector.modal.snippetsSelector)
 
   const book = bookKey && snippets && snippets.filter(snippet => snippet.key === bookKey)
 
