@@ -9,14 +9,14 @@ import { getType } from "typesafe-actions"
 type StorageType = {
   valueSearch: string
   snippets: null | Array<SnippetType>
-  count: null | number
+  snippetscount: null | number
 }
 
 const initialState = {
   storage: {
     valueSearch: '',
     snippets: null,
-    count: null,
+    snippetscount: null,
   } as StorageType,
   bookKey: null as null | string,
   isFetching: false
@@ -32,7 +32,7 @@ const SearchReducer = (state = initialState, action: Actions): InitialStateType 
         storage: {
           ...state.storage,
           snippets: action.payload.snippets,
-          count: action.payload.count
+          snippetscount: action.payload.snippetscount
         }
       }
     case getType(searchActions.setValueSearch):
