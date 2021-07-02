@@ -15,8 +15,8 @@ const Modal = () => {
 
   const book = bookKey && snippets && snippets.filter(snippet => snippet.key === bookKey)
 
-  return (
-    book &&
+  return (<>
+    {book &&
     <div className={book ? styles.modalActive : styles.modal} onClick={() => dispatch(setBookKey(null))}>
       <div className={styles.content} onClick={e => e.stopPropagation()}>
         <div className={styles.header}>
@@ -62,8 +62,8 @@ const Modal = () => {
           </div>}
         </div>
       </div>
-    </div>
-  )
+    </div>}
+  </>)
 } 
 
 export default Modal
