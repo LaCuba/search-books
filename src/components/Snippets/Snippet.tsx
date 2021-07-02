@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { FC } from 'react'
 import styles from './Snippet.module.scss'
 import bookImg from './../../icons/book.svg'
 import { useDispatch } from 'react-redux'
 
-const Snippet = ({ coverId, title, author, bookKey, setBookKey }) => {
+type SnippetPropsType = {
+  coverId: string | null
+  title: string
+  author: Array<string> | null
+  bookKey: string
+  setBookKey: (bookKey: string) => void
+}
+
+const Snippet: FC<SnippetPropsType> = ({ coverId, title, author, bookKey, setBookKey }) => {
 
   const dispatch = useDispatch()
 
