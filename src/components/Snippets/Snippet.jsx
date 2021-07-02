@@ -1,9 +1,9 @@
 import React from 'react'
-import styles from './Snippets.module.scss'
+import styles from './Snippet.module.scss'
 import bookImg from './../../icons/book.svg'
 import { useDispatch } from 'react-redux'
 
-const Snippets = ({ coverId, title, author, bookKey, setBookKey }) => {
+const Snippet = ({ coverId, title, author, bookKey, setBookKey }) => {
 
   const dispatch = useDispatch()
 
@@ -20,4 +20,4 @@ const Snippets = ({ coverId, title, author, bookKey, setBookKey }) => {
   </>
 }
 
-export default Snippets
+export default Snippet

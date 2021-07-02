@@ -1,23 +1,24 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import Snippets from './Snippets'
+import Snippet from './Snippet'
 import { getBooks } from '../../redux/thunk/thunk'
-import { setBookKey } from './../../redux/actions/modal'
+import { setBookKey } from '../../redux/actions/modal'
 import Paginator from './Paginator'
 import { useState } from 'react'
 import styles from './SnippetsContainer.module.scss'
 import Preloader from '../common/Preloader'
+import * as selector from './../../redux/selectors/selectors'
 
 const SnippetsContainer = () => {
 
   const [currentPage, setCurrentPage] = useState(1)
   
-  const storage = useSelector(state => state.snippets.storage)
-  const isFetching = useSelector(state => state.snippets.isFetching)
+  const storage = useSelector(selector.snippets.storage)
+  const isFetching = useSelector(selector.snippets.isFetching)
 
   const dispatch = useDispatch()
 
-  const pageClick = (p) => {
+  const pageClick = (p: number) => {
     dispatch(getBooks(storage.valueSearch, p))
     setCurrentPage(p)
   }
@@ -26,16 +27,15 @@ const SnippetsContainer = () => {
     <Preloader isFetching={isFetching} />
     {storage.snippets &&
       <div>
-        {Object.keys(storage.snippets)
-          .map(key => <Snippets key={key}
-            coverId={storage.snippets[key].cover_i ? storage.snippets[key].cover_i : null}
-            title={storage.snippets[key].title}
-            author={storage.snippets[key].author_name ? storage.snippets[key].author_name : null}
-            bookKey={storage.snippets[key].key}
+        {storage.snippets.map(snippet => <Snippet key={snippet.key}
+            coverId={snippet.cover_i ? snippet.cover_i : null}
+            title={snippet.title}
+            author={snippet.author_name ? snippet.author_name : null}
+            bookKey={snippet.key}
             setBookKey={setBookKey}
           />)}
         <div className={styles.paginator}>
-          <Paginator countSnippets={storage.count}
+          <Paginator countSnippets={storage.snippetscount}
             currentPage={currentPage}
             pageClick={pageClick}
           />
