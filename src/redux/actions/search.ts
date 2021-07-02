@@ -1,17 +1,11 @@
-type SetBooksType = {
-  type: string
-  payload: {
-    snippets: string
-    count: number
-  }
-}
+import { createCustomAction } from "typesafe-actions"
 
-export const setBooks = (snippets: any, count: number) => ({
-  type: "search/SET-SNIPPETS",
-  payload: { snippets, count }
-})
+export const setBooks = createCustomAction('search/SET-SNIPPETS',
+  (snippets: any, count: number) => ({
+    payload: { snippets, count }
+  }))
 
-export const setValueSearch = (value: string) => ({
-  type: "search/SET-VALUE-SEARCH",
-  payload: { value }
-})
+export const setValueSearch = createCustomAction('search/SET-VALUE-SEARCH',
+  (value: string) => ({
+    payload: { value }
+  }))

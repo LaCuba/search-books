@@ -3,7 +3,8 @@ import * as searchActions from "../actions/search"
 import * as modalActions from "../actions/modal"
 import * as preloaderActions from "../actions/preloader"
 import { SnippetType } from "../thunk/thunk"
-import { AnyAction } from "redux"
+import { Actions } from "../actions/actions"
+import { getType } from "typesafe-actions"
 
 type StorageType = {
   valueSearch: string
@@ -23,9 +24,9 @@ const initialState = {
 
 type InitialStateType = typeof initialState
 
-const SearchReducer = (state = initialState, action: AnyAction): InitialStateType => {
+const SearchReducer = (state = initialState, action: Actions): InitialStateType => {
   switch (action.type) {
-    case 'search/SET-SNIPPETS':
+    case getType(searchActions.setBooks):
       return {
         ...state,
         storage: {
@@ -34,7 +35,7 @@ const SearchReducer = (state = initialState, action: AnyAction): InitialStateTyp
           count: action.payload.count
         }
       }
-    case 'search/SET-VALUE-SEARCH':
+    case getType(searchActions.setValueSearch):
       return {
         ...state,
         storage: {
@@ -42,12 +43,12 @@ const SearchReducer = (state = initialState, action: AnyAction): InitialStateTyp
           valueSearch: action.payload.value
         }
       }
-    case 'preloader/TOGGLE-IS-FETCHING':
+    case getType(preloaderActions.toggleIsFetching):
       return {
         ...state,
         isFetching: action.payload.isFetching
       }
-    case 'modal/SET-BOOK':
+    case getType(modalActions.setBookKey):
       if (action.payload.bookKey) {
         return {
           ...state,

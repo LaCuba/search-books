@@ -1,11 +1,7 @@
-type ToggleIsFetchingType = {
-  type: string
-  payload: {
-    isFetching: boolean
-  }
-}
+import { createCustomAction } from "typesafe-actions";
 
-export const toggleIsFetching = (isFetching: boolean): ToggleIsFetchingType => ({
-  type: 'preloader/TOGGLE-IS-FETCHING',
-  payload: { isFetching }
-})
+export const toggleIsFetching = createCustomAction('preloader/TOGGLE-IS-FETCHING',
+  (isFetching: boolean) => ({
+    payload: { isFetching }
+  }))
+
