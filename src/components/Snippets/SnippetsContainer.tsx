@@ -35,10 +35,10 @@ const SnippetsContainer = () => {
             setBookKey={setBookKey}
           />)}
         <div className={styles.paginator}>
-          <Paginator countSnippets={storage.snippetscount}
+          {storage.snippetscount && <Paginator countSnippets={storage.snippetscount}
             currentPage={currentPage}
             pageClick={pageClick}
-          />
+          />}
         </div>
       </div>}
   </>

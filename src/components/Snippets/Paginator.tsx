@@ -1,11 +1,18 @@
-import React, { useState } from 'react'
+import React, { FC, useState } from 'react'
 import styles from './Paginator.module.scss'
 
-const Paginator = ({ countSnippets, currentPage, pageClick }) => {
+type Paginator = {
+  countSnippets: number
+  currentPage: number
+  countSnippetsOnPage?: number
+  portionSize?: number
+  pageClick: (p: number) => void
+}
 
-  const portionSize = 5
+const Paginator: FC<Paginator> = ({ countSnippets, countSnippetsOnPage = 100, 
+  currentPage, pageClick, portionSize = 5 }) => {
 
-  const pagesCount = Math.ceil(countSnippets / 100)
+  const pagesCount = Math.ceil(countSnippets / countSnippetsOnPage)
 
   const pages = []
 
