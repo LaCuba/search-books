@@ -30,15 +30,13 @@ const Search = () => {
     }
   }
 
-  return <>
-    <div className={styles.panel}>
-      <input type="text" placeholder="Search a book." onChange={onSearchChange} value={text} />
-      <button onClick={searchBooks}>Search</button>
+  return <div className={styles.panel}>
+      <input className={styles.searchInput} type="text" placeholder="Search a book." onChange={onSearchChange} value={text} />
+      <button className={styles.searchBtn} onClick={searchBooks}>Search</button>
       {count && <div className={styles.resultCount}>
         <p>Results: {count}</p>
       </div>}
     </div>
-  </>
 }
 
 export default Search
