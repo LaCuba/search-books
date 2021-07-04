@@ -15,12 +15,12 @@ const Search = () => {
 
   const onSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setText(e.currentTarget.value)
-  //   if (e.currentTarget.value) {
-  //     clearTimeout(timer)
-  //     const localTimer: ReturnType<typeof setTimeout> = setTimeout((value) => 
-  //       dispatch(getBooks(value.replaceAll(/\s+/g, '+'))), 1000, e.currentTarget.value)
-  //     setTimer(localTimer)
-  //   }
+    if (e.currentTarget.value) {
+      clearTimeout(timer)
+      const localTimer = window.setTimeout((value: string) => 
+        dispatch(getBooks(value.replace(/\s+/g, '+'))), 1000, e.currentTarget.value)
+      setTimer(localTimer)
+    }
   }
 
   const searchBooks = () => {
