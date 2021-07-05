@@ -79,8 +79,10 @@
     width: 70%;
     grid-template-columns: 70% 30%;
     .searchBtn {
-      padding-left: 0px;
-      padding-right: 0px;
+      .btn {
+        padding-left: 0px;
+        padding-right: 0px;
+      }
     }
   }
 }
