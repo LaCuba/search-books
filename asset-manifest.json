@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/search-books/static/css/main.ffa4a8fb.chunk.css",
+    "main.css": "/search-books/static/css/main.06923ce0.chunk.css",
     "main.js": "/search-books/static/js/main.3eee0c10.chunk.js",
     "main.js.map": "/search-books/static/js/main.3eee0c10.chunk.js.map",
     "runtime-main.js": "/search-books/static/js/runtime-main.c4afcda1.js",
@@ -8,7 +8,7 @@
     "static/js/2.b433c1fb.chunk.js": "/search-books/static/js/2.b433c1fb.chunk.js",
     "static/js/2.b433c1fb.chunk.js.map": "/search-books/static/js/2.b433c1fb.chunk.js.map",
     "index.html": "/search-books/index.html",
-    "static/css/main.ffa4a8fb.chunk.css.map": "/search-books/static/css/main.ffa4a8fb.chunk.css.map",
+    "static/css/main.06923ce0.chunk.css.map": "/search-books/static/css/main.06923ce0.chunk.css.map",
     "static/js/2.b433c1fb.chunk.js.LICENSE.txt": "/search-books/static/js/2.b433c1fb.chunk.js.LICENSE.txt",
     "static/media/book.a929ff68.svg": "/search-books/static/media/book.a929ff68.svg",
     "static/media/close.c39ccb73.svg": "/search-books/static/media/close.c39ccb73.svg",
@@ -17,7 +17,7 @@
   "entrypoints": [
     "static/js/runtime-main.c4afcda1.js",
     "static/js/2.b433c1fb.chunk.js",
-    "static/css/main.ffa4a8fb.chunk.css",
+    "static/css/main.06923ce0.chunk.css",
     "static/js/main.3eee0c10.chunk.js"
   ]
 }
