@@ -31,8 +31,12 @@ const Search = () => {
   }
 
   return <div className={styles.panel}>
+    <span className={styles.inputBox}>
       <input className={styles.searchInput} type="text" placeholder="Search a book." onChange={onSearchChange} value={text} />
-      <button className={styles.searchBtn} onClick={searchBooks}>Search</button>
+    </span>
+    <span className={styles.searchBtn}>
+      <button className={styles.btn} onClick={searchBooks}>Search</button>
+    </span>
       {count && <div className={styles.resultCount}>
         <p>Results: {count}</p>
       </div>}
