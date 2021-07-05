@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/search-books/static/css/main.a79e8c5d.chunk.css",
-    "main.js": "/search-books/static/js/main.29397286.chunk.js",
-    "main.js.map": "/search-books/static/js/main.29397286.chunk.js.map",
+    "main.css": "/search-books/static/css/main.ffa4a8fb.chunk.css",
+    "main.js": "/search-books/static/js/main.3eee0c10.chunk.js",
+    "main.js.map": "/search-books/static/js/main.3eee0c10.chunk.js.map",
     "runtime-main.js": "/search-books/static/js/runtime-main.c4afcda1.js",
     "runtime-main.js.map": "/search-books/static/js/runtime-main.c4afcda1.js.map",
     "static/js/2.b433c1fb.chunk.js": "/search-books/static/js/2.b433c1fb.chunk.js",
     "static/js/2.b433c1fb.chunk.js.map": "/search-books/static/js/2.b433c1fb.chunk.js.map",
     "index.html": "/search-books/index.html",
-    "static/css/main.a79e8c5d.chunk.css.map": "/search-books/static/css/main.a79e8c5d.chunk.css.map",
+    "static/css/main.ffa4a8fb.chunk.css.map": "/search-books/static/css/main.ffa4a8fb.chunk.css.map",
     "static/js/2.b433c1fb.chunk.js.LICENSE.txt": "/search-books/static/js/2.b433c1fb.chunk.js.LICENSE.txt",
     "static/media/book.a929ff68.svg": "/search-books/static/media/book.a929ff68.svg",
     "static/media/close.c39ccb73.svg": "/search-books/static/media/close.c39ccb73.svg",
@@ -17,7 +17,7 @@
   "entrypoints": [
     "static/js/runtime-main.c4afcda1.js",
     "static/js/2.b433c1fb.chunk.js",
-    "static/css/main.a79e8c5d.chunk.css",
-    "static/js/main.29397286.chunk.js"
+    "static/css/main.ffa4a8fb.chunk.css",
+    "static/js/main.3eee0c10.chunk.js"
   ]
 }
