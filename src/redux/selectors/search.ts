@@ -1,3 +1,4 @@
-import { RootState } from "../store";
+import { RootState } from "../store"
 
-export const snippetscount = (state: RootState) => state.snippets.storage.snippetscount
+export const snippetscount = (state: RootState) =>
+  state.snippets.storage.snippetscount

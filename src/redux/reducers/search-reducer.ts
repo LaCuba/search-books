@@ -1,4 +1,4 @@
-import { Reducer } from "react"
+import { Reducer } from "redux"
 import * as searchActions from "../actions/search"
 import * as modalActions from "../actions/modal"
 import * as preloaderActions from "../actions/preloader"
@@ -6,25 +6,28 @@ import { SnippetType } from "../thunk/thunk"
 import { Actions } from "../actions/actions"
 import { getType } from "typesafe-actions"
 
-type StorageType = {
+export type StorageType = {
   valueSearch: string
   snippets: null | Array<SnippetType>
   snippetscount: null | number
 }
 
-const initialState = {
+export const initialState = {
   storage: {
-    valueSearch: '',
+    valueSearch: "",
     snippets: null,
     snippetscount: null,
   } as StorageType,
   bookKey: null as null | string,
-  isFetching: false
+  isFetching: false,
 }
 
-type InitialStateType = typeof initialState
+export type InitialStateType = typeof initialState
 
-const SearchReducer = (state = initialState, action: Actions): InitialStateType => {
+const SearchReducer: Reducer<InitialStateType, Actions> = (
+  state = initialState,
+  action: Actions
+): InitialStateType => {
   switch (action.type) {
     case getType(searchActions.setBooks):
       return {
@@ -32,32 +35,32 @@ const SearchReducer = (state = initialState, action: Actions): InitialStateType 
         storage: {
           ...state.storage,
           snippets: action.payload.snippets,
-          snippetscount: action.payload.snippetscount
-        }
+          snippetscount: action.payload.snippetscount,
+        },
       }
     case getType(searchActions.setValueSearch):
       return {
         ...state,
         storage: {
           ...state.storage,
-          valueSearch: action.payload.value
-        }
+          valueSearch: action.payload.value,
+        },
       }
     case getType(preloaderActions.toggleIsFetching):
       return {
         ...state,
-        isFetching: action.payload.isFetching
+        isFetching: action.payload.isFetching,
       }
     case getType(modalActions.setBookKey):
       if (action.payload.bookKey) {
         return {
           ...state,
-          bookKey: action.payload.bookKey
+          bookKey: action.payload.bookKey,
         }
       }
       return {
         ...state,
-        bookKey: null
+        bookKey: null,
       }
     default:
       return state

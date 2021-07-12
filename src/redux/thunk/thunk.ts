@@ -12,24 +12,25 @@ export type SnippetType = {
   publisher: Array<string> | null
 }
 
-export const getBooks = (value: string, currentPage = 1) => (dispatch: any) => {
-  dispatch(toggleIsFetching(true))
-  searchApi.getBooks(value, currentPage)
-  .then(response => {
-    const snippets = response.docs.map((serverBook: SnippetType) => {
-      return {
-        key: serverBook.key,
-        title: serverBook.title,
-        cover_i: serverBook.cover_i || null,
-        publish_date: serverBook.publish_date || null,
-        author_name: serverBook.author_name || null,
-        isbn: serverBook.isbn,
-        publisher: serverBook.publisher || null
-      }
-    })
+export const getBooks =
+  (value: string, currentPage = 1) =>
+  (dispatch: any) => {
+    dispatch(toggleIsFetching(true))
+    searchApi.getBooks(value, currentPage).then((response) => {
+      const snippets = response.docs.map((serverBook: SnippetType) => {
+        return {
+          key: serverBook.key,
+          title: serverBook.title,
+          cover_i: serverBook.cover_i || null,
+          publish_date: serverBook.publish_date || null,
+          author_name: serverBook.author_name || null,
+          isbn: serverBook.isbn,
+          publisher: serverBook.publisher || null,
+        }
+      })
 
-    dispatch(toggleIsFetching(false))
-    dispatch(setValueSearch(value))
-    dispatch(setBooks(snippets, response.numFound))
-  })
-}
+      dispatch(toggleIsFetching(false))
+      dispatch(setValueSearch(value))
+      dispatch(setBooks(snippets, response.numFound))
+    })
+  }

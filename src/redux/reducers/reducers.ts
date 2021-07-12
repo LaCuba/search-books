@@ -1,7 +1,7 @@
-import SearchReducer from "./search-reducer";
+import SearchReducer from "./search-reducer"
 
 const reducers = {
-  snippets: SearchReducer
+  snippets: SearchReducer,
 }
 
 export default reducers

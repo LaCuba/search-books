@@ -1,7 +1,8 @@
-import { createCustomAction } from "typesafe-actions";
+import { createCustomAction } from "typesafe-actions"
 
-export const toggleIsFetching = createCustomAction('preloader/TOGGLE-IS-FETCHING',
+export const toggleIsFetching = createCustomAction(
+  "preloader/TOGGLE-IS-FETCHING",
   (isFetching: boolean) => ({
-    payload: { isFetching }
-  }))
-
+    payload: { isFetching },
+  })
+)

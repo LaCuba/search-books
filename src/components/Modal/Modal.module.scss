@@ -2,7 +2,7 @@
 .modalActive {
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0, 0, 0, 0.4);
   position: fixed;
   top: 0;
   left: 0;
@@ -23,9 +23,9 @@
   padding: 20px;
 
   display: grid;
-  grid-template-areas: 
-  "header header"
-  "cover info";
+  grid-template-areas:
+    "header header"
+    "cover info";
   grid-template-columns: 2fr 4fr;
   grid-template-rows: 1fr auto;
   gap: 15px;
@@ -76,4 +76,3 @@
     display: inline;
   }
 }
-
