@@ -8,7 +8,7 @@
 
 #### [>Try the app<](https://lacuba.github.io/search-books/)
 
-###How to launch a project:
+### How to launch a project:
 
 1. Clone this project.
 2. Install the necessary packages with the command: **`npm install`**
