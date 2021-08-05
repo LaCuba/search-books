@@ -4,15 +4,15 @@
 
 ### Technologies:
 
-##### `Sass` `JavaScript` `React` `TypeScript` `Redux` `REST API` `Redux-thunk` `Axios`
-
-#### [>Try the app<](https://lacuba.github.io/search-books/)
+`Sass` `JavaScript` `React` `TypeScript` `Redux` `REST API` `Redux-thunk` `Axios`
 
 ### How to launch a project:
 
 1. Clone this project.
 2. Install the necessary packages with the command: **`npm install`**
 3. Start the server with the command: **`npm start`**
+
+#### [>Try the app<](https://lacuba.github.io/search-books/)
 
 ---
 
